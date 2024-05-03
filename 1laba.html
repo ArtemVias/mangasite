@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Аниме интернет-магазин</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <form class="contact_form" action="" method="post" Оставьте отзыв="contact_form">
+        <ul>
+            <li>
+                <h2>Оставьте отзыв</h2>
+                <span class="required_notification">* Поля, обязательные для заполнения</span>
+            </li>
+            <form id="myForm">
+                <label for="name">Ваше имя:</label>
+                <input type="text" id="name" name="name"><br>
+                <label for="email">Электронная почта:</label><br>
+                <input type="email" id="email" name="email"><br>
+                <label for="message">Отзыв:</label><br>
+                <textarea id="message" name="message"></textarea><br>
+                <button type="button" onclick="validateForm()">Отправить</button>
+            </form>
+
+<script>
+function validateForm() {
+    var name = document.getElementById("name").value;
+    var email = document.getElementById("email").value;
+    var message = document.getElementById("message").value;
+    var errorElement = document.getElementById("error");
+
+    if (name === "" || email === "" || message === "") {
+        alert("Пожалуйста, заполните все поля.");
+        return false;
+    } else {
+        alert("Ваш отзыв отправлен.");
+        return true;
+    }
+}
+</script>
+
+</body>
+</html>
